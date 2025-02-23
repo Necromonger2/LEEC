@@ -58,7 +58,6 @@ namespace LEEC
                 if (updateRequired)
                 {
                     // Optionally, you can add a delay here to let the user read the message
-                    await Task.Delay(3000); // 3 seconds delay before shutdown
                     Application.Current.Shutdown();
                 }
                 else
