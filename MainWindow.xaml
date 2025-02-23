@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LEEC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="250" Width="250">
     <Grid>
+        <TextBlock x:Name="StatusTextBlock" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   FontSize="16" 
+                   TextWrapping="Wrap" 
+                   Margin="10" />
 
+        <TextBlock x:Name="CurrentVersionTextBlock" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="14" 
+                   TextWrapping="Wrap" 
+                   Margin="10" />
+
+        <TextBlock x:Name="RemoteVersionTextBlock" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom" 
+                   FontSize="14" 
+                   TextWrapping="Wrap" 
+                   Margin="10" />
+
+        <ProgressBar x:Name="LoadingProgressBar" 
+                     IsIndeterminate="True" 
+                     Visibility="Collapsed" 
+                     HorizontalAlignment="Stretch" 
+                     VerticalAlignment="Bottom" 
+                     Height="20"/>
     </Grid>
 </Window>
