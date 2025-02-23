@@ -22,7 +22,7 @@ namespace LEEC
             // Initialize the VersionChecker with debug enabled
             VersionChecker versionChecker = new VersionChecker(
                 "https://necromonger2.github.io/LEEC/version.json",
-                "https://necromonger2.github.io/LEEC/update.exe"
+                "https://github.com/Necromonger2/LEEC/blob/master/Setup.exe"
             )
             {
                 IsDebugEnabled = false // Set to true to enable debug messages
