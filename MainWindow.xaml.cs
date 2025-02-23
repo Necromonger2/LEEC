@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics; // Add this using directive
+using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Threading.Tasks;
@@ -88,17 +88,19 @@ namespace LEEC
         {
             try
             {
-                // Get the path to the current directory
-                string gamePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Game.exe");
+                // Create an instance of the LEEC.Game form
+                LEEC.Game gameForm = new LEEC.Game();
 
-                // Start the Game.exe application
-                Process.Start(gamePath);
-                Application.Current.Shutdown(); // Close the updater application
+                // Show the game form
+                gameForm.Show();
+
+                // Hide the updater application
+                this.Hide(); // Assuming this is the updater form
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Failed to start the game: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Application.Current.Shutdown();
+                Application.Current.Shutdown(); // Optionally shut down the application on error
             }
         }
     }
