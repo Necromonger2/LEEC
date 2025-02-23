@@ -11,14 +11,18 @@
     <PackageProjectUrl>https://necromonger2.github.io/LEEC/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Necromonger2/LEEC/</RepositoryUrl>
-    <AssemblyVersion>0.2025.0223.1118</AssemblyVersion>
-    <FileVersion>0.2025.0223.1118</FileVersion>
+    <AssemblyVersion>0.2025.0223.1144</AssemblyVersion>
+    <FileVersion>0.2025.0223.1144</FileVersion>
     <Platforms>AnyCPU;x64</Platforms>
     <Version>1.20250222.0958</Version>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>HjProgramingKey.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>UpdateIcon.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="UpdateIcon.ico" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
