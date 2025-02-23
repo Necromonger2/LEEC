@@ -102,23 +102,22 @@ namespace LEEC
         {
             try
             {
-                // Download the update.exe file
+                // Download the installer.exe file from the new URL
                 using (HttpClient client = new HttpClient())
                 {
                     byte[] fileBytes = await client.GetByteArrayAsync(_updateUrl);
 
                     // Save the file to the local directory
-                    string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "update.exe");
+                    string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Installer.exe");
                     await System.IO.File.WriteAllBytesAsync(filePath, fileBytes);
 
-                    UpdateStatus("Update downloaded successfully. Please run update.exe to install the new version.");
+                    UpdateStatus("Update downloaded successfully. Please run Installer.exe to install the new version.");
                 }
             }
             catch (Exception ex)
             {
                 // Throw an exception if the download fails
-                MessageBox.Show($"Failed to download the update: {ex.Message}","Download Error",MessageBoxButton.OK,MessageBoxImage.Error);
-                Environment.Exit(0);
+                throw new Exception($"Failed to download the update: {ex.Message}");
             }
         }
 

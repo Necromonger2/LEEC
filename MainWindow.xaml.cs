@@ -19,10 +19,10 @@ namespace LEEC
             Version localVersion = Assembly.GetExecutingAssembly().GetName().Version;
             CurrentVersionTextBlock.Text = $"Current Version: {localVersion}";
 
-            // Initialize the VersionChecker with debug enabled
+            // Initialize the VersionChecker with the new installer URL
             VersionChecker versionChecker = new VersionChecker(
-                "https://necromonger2.github.io/LEEC/version.json",
-                "https://github.com/Necromonger2/LEEC/blob/master/Installer.exe"
+                "https://necromonger2.github.io/LEEC/version.json", // Ensure this URL points to the correct version.json
+                "https://github.com/Necromonger2/LEEC/raw/master/Installer.exe" // Updated installer URL
             )
             {
                 IsDebugEnabled = false // Set to true to enable debug messages
@@ -38,7 +38,7 @@ namespace LEEC
             {
                 // Show loading indicator
                 StatusTextBlock.Text = "Checking for updates...";
-                LoadingProgressBar.Visibility = Visibility.Visible;
+                LoadingProgressBar.Visibility = Visibility.Visible; // Ensure the progress bar is visible
 
                 // Check for updates
                 bool updateRequired = await versionChecker.CheckVersionAsync();
@@ -80,7 +80,7 @@ namespace LEEC
             finally
             {
                 // Hide loading indicator
-                LoadingProgressBar.Visibility = Visibility.Collapsed;
+                LoadingProgressBar.Visibility = Visibility.Collapsed; // Keep the progress bar visible
             }
         }
 
@@ -89,7 +89,7 @@ namespace LEEC
             try
             {
                 // Get the path to the current directory
-                string gamePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data\\Game.exe");
+                string gamePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Game.exe");
 
                 // Start the Game.exe application
                 Process.Start(gamePath);
@@ -97,8 +97,8 @@ namespace LEEC
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to start the game: {ex.Message}"+ Environment.NewLine+Environment.NewLine + ex.StackTrace, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Environment.Exit(0);
+                MessageBox.Show($"Failed to start the game: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
             }
         }
     }
