@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Windows;
+using System.Diagnostics;
 
 namespace LEEC
 {
@@ -111,7 +112,10 @@ namespace LEEC
                     string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Installer.exe");
                     await System.IO.File.WriteAllBytesAsync(filePath, fileBytes);
 
-                    UpdateStatus("Update downloaded successfully. Please run Installer.exe to install the new version.");
+                    UpdateStatus("Update downloaded successfully. Starting Installer.exe...");
+
+                    // Start the Installer.exe application
+                    Process.Start(filePath);
                 }
             }
             catch (Exception ex)
