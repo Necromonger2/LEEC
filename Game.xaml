@@ -16,9 +16,26 @@
     <Grid Background="#FF2D2D30">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
             <TextBlock Text="Login" FontSize="32" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBox x:Name="UsernameTextBox" Width="300" Height="40" Margin="0,0,0,10" Background="#FF3C3F43" Foreground="White" BorderBrush="#FF4B4E54" BorderThickness="1" />
-            <PasswordBox x:Name="PasswordBox" Width="300" Height="40" Margin="0,0,0,20" Background="#FF3C3F43" Foreground="White" BorderBrush="#FF4B4E54" BorderThickness="1"/>
+
+            <!-- Username TextBox with placeholder -->
+            <Grid>
+                <TextBox x:Name="UsernameTextBox" Width="300" Height="40" Margin="0,0,0,10" Background="#FF3C3F43" Foreground="White" BorderBrush="#FF4B4E54" BorderThickness="1" GotFocus="UsernameTextBox_GotFocus" LostFocus="UsernameTextBox_LostFocus"/>
+                <TextBlock x:Name="UsernamePlaceholder" Text="username" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" IsHitTestVisible="False"/>
+            </Grid>
+
+            <!-- PasswordBox with placeholder -->
+            <Grid>
+                <PasswordBox x:Name="PasswordBox" Width="300" Height="40" Margin="0,0,0,20" Background="#FF3C3F43" Foreground="White" BorderBrush="#FF4B4E54" BorderThickness="1" GotFocus="PasswordBox_GotFocus" LostFocus="PasswordBox_LostFocus"/>
+                <TextBlock x:Name="PasswordPlaceholder" Text="password" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" IsHitTestVisible="False"/>
+            </Grid>
+
             <Button Content="Login" Width="300" Height="40" Background="#FF007ACC" Foreground="White" Click="LoginButton_Click"/>
+
+            <TextBlock Text="or Register" FontSize="32" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+            <Button Content="Register" Width="300" Height="40" Background="#FF007ACC" Foreground="White" Click="RegisterButton_Click"/>
+
+            <!-- Message TextBlock for displaying status messages -->
+            <TextBlock x:Name="MessageTextBlock" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" TextAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>
