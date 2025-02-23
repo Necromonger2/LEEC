@@ -1,3 +1,4 @@
 {
-    "version":  "0.2025.0223.1438"
+    "version":  "0.2025.0223.15261",
+    "inherit":  "some_value"
 }
