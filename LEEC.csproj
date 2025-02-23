@@ -11,8 +11,8 @@
     <PackageProjectUrl>https://necromonger2.github.io/LEEC/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Necromonger2/LEEC/</RepositoryUrl>
-    <AssemblyVersion>0.2025.0223.1100</AssemblyVersion>
-    <FileVersion>0.2025.0223.1100</FileVersion>
+    <AssemblyVersion>0.2025.0223.1118</AssemblyVersion>
+    <FileVersion>0.2025.0223.1118</FileVersion>
     <Platforms>AnyCPU;x64</Platforms>
     <Version>1.20250222.0958</Version>
     <PlatformTarget>AnyCPU</PlatformTarget>

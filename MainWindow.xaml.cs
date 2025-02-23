@@ -88,13 +88,17 @@ namespace LEEC
         {
             try
             {
+                // Get the path to the current directory
+                string gamePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data\\Game.exe");
+
                 // Start the Game.exe application
-                Process.Start("Game.exe");
+                Process.Start(gamePath);
                 Application.Current.Shutdown(); // Close the updater application
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to start the game: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Failed to start the game: {ex.Message}"+ Environment.NewLine+Environment.NewLine + ex.StackTrace, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Environment.Exit(0);
             }
         }
     }
