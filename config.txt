@@ -1,9 +1,0 @@
-;Setup
-Title=Installer
-BeginPrompt=0
-License=license.txt
-Path=HJPrograming\Autoupdate
-Setup=LEEC.exe
-Overwrite=1
-Update=U
-Shortcut=D, LEEC.exe, , , "Play LEEC", LEEC.exe
