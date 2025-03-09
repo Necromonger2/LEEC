@@ -14,9 +14,10 @@
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start; /* Align items to the start */
+            min-height: 100vh; /* Use min-height instead of height */
             margin: 0;
+            padding: 20px; /* Add some padding */
             overflow: auto; /* Allow scrolling if content overflows */
         }
 
@@ -28,7 +29,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             max-width: 800px;
-            width: 90%;
+            width: 100%; /* Use full width */
         }
 
         h1 {
@@ -106,7 +107,6 @@
         <!-- Hero Section -->
         <h1>Download LEEC The Game</h1>
         <p>Experience the ultimate adventure! Click the button below to download the latest version of LEEC The Game <span id="version">Loading...</span>.</p>
-        <a href="Installer.exe" download class="download-button">Download Now</a>
 
         <!-- Game Description Section -->
         <h2>LEEC_The_Game</h2>
@@ -120,6 +120,9 @@
         <p>Engineers later established communication to other LEECSS. During the past twenty years most of the other LEECSS have been terribly damaged in the search for a habitable planet because the technology to transform planets was lost when our home got sucked into a black hole.</p>
         <p>Twenty four hours ago we received a message from the EEC Philadelphia stating they found a planet with intelligent life and is being approached by an unknown Spaceship. All communication with the EEC Philadelphia has been lost since. We now fear that the humans are not the only intelligent life out here in the universe. It is now up to us to reestablish humanity in this universe and save what is left of humanity.</p>
         <p>It is now up to you commander, the fate of the EEC Enterprise and humanity rest in your hands, good luck.</p>
+
+        <!-- Download Button -->
+        <a href="Installer.exe" download class="download-button">Download Now</a>
 
         <!-- Footer -->
         <footer>
